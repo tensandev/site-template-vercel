@@ -1,0 +1,971 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5.9% 10%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+  }
+
+  /* モノクロスタイル */
+  /*.monochrome {*/
+  .monochrome {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+    --primary: 0 0% 0%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 95%;
+    --secondary-foreground: 0 0% 10%;
+    --muted: 0 0% 90%;
+    --muted-foreground: 0 0% 40%;
+    --accent: 0 0% 95%;
+    --accent-foreground: 0 0% 10%;
+    --border: 0 0% 85%;
+  }
+
+  /* パステルスタイル */
+  /*.pastel {*/
+  .pastel {
+    --background: 210 50% 98%;
+    --foreground: 210 40% 20%;
+    --card: 210 50% 98%;
+    --card-foreground: 210 40% 20%;
+    --primary: 340 80% 80%;
+    --primary-foreground: 340 80% 20%;
+    --secondary: 180 70% 90%;
+    --secondary-foreground: 180 70% 20%;
+    --muted: 210 40% 93%;
+    --muted-foreground: 210 40% 40%;
+    --accent: 270 70% 90%;
+    --accent-foreground: 270 70% 30%;
+    --border: 210 40% 90%;
+  }
+
+  /* ボールドスタイル */
+  /*.bold {*/
+  .bold {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+    --primary: 350 100% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 230 100% 50%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 90%;
+    --muted-foreground: 0 0% 40%;
+    --accent: 130 100% 40%;
+    --accent-foreground: 0 0% 100%;
+    --border: 0 0% 85%;
+  }
+
+  /* ジオメトリックスタイル */
+  /*.geometric {*/
+  .geometric {
+    --background: 220 20% 97%;
+    --foreground: 220 80% 10%;
+    --card: 220 20% 97%;
+    --card-foreground: 220 80% 10%;
+    --primary: 220 80% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 260 80% 50%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 220 20% 90%;
+    --muted-foreground: 220 20% 40%;
+    --accent: 190 80% 50%;
+    --accent-foreground: 0 0% 100%;
+    --border: 220 20% 85%;
+  }
+
+  /* ミニマリストスタイル */
+  /*.minimalist {*/
+  .minimalist {
+    --background: 0 0% 98%;
+    --foreground: 0 0% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+    --primary: 0 0% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 10%;
+    --muted: 0 0% 92%;
+    --muted-foreground: 0 0% 50%;
+    --accent: 0 0% 96%;
+    --accent-foreground: 0 0% 10%;
+    --border: 0 0% 90%;
+  }
+
+  /* ネオンスタイル */
+  /*.neon {*/
+  .neon {
+    --background: 240 50% 3%;
+    --foreground: 0 0% 98%;
+    --card: 240 50% 5%;
+    --card-foreground: 0 0% 98%;
+    --primary: 320 100% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 180 100% 50%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 240 50% 8%;
+    --muted-foreground: 0 0% 70%;
+    --accent: 120 100% 50%;
+    --accent-foreground: 0 0% 100%;
+    --border: 240 50% 10%;
+  }
+
+  /* セピアスタイル */
+  /*.sepia {*/
+  .sepia {
+    --background: 30 30% 96%;
+    --foreground: 30 50% 15%;
+    --card: 30 30% 98%;
+    --card-foreground: 30 50% 15%;
+    --primary: 30 80% 40%;
+    --primary-foreground: 30 30% 98%;
+    --secondary: 30 30% 90%;
+    --secondary-foreground: 30 50% 20%;
+    --muted: 30 30% 85%;
+    --muted-foreground: 30 50% 40%;
+    --accent: 30 50% 70%;
+    --accent-foreground: 30 50% 15%;
+    --border: 30 30% 80%;
+  }
+
+  /* ナチュラルスタイル */
+  /*.natural {*/
+  .natural {
+    --background: 60 30% 96%;
+    --foreground: 120 30% 20%;
+    --card: 60 30% 98%;
+    --card-foreground: 120 30% 20%;
+    --primary: 120 40% 40%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 40 60% 70%;
+    --secondary-foreground: 40 30% 20%;
+    --muted: 60 20% 90%;
+    --muted-foreground: 120 10% 40%;
+    --accent: 150 40% 60%;
+    --accent-foreground: 150 40% 10%;
+    --border: 60 20% 85%;
+  }
+
+  /* テクノスタイル */
+  /*.techno {*/
+  .techno {
+    --background: 210 50% 10%;
+    --foreground: 210 50% 98%;
+    --card: 210 50% 12%;
+    --card-foreground: 210 50% 98%;
+    --primary: 210 100% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 270 100% 60%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 210 50% 15%;
+    --muted-foreground: 210 50% 70%;
+    --accent: 150 100% 50%;
+    --accent-foreground: 0 0% 100%;
+    --border: 210 50% 20%;
+  }
+
+  /* 北欧スタイル */
+  /*.scandinavian {*/
+  .scandinavian {
+    --background: 200 20% 98%;
+    --foreground: 200 50% 20%;
+    --card: 0 0% 100%;
+    --card-foreground: 200 50% 20%;
+    --primary: 200 80% 45%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 30 80% 85%;
+    --secondary-foreground: 30 50% 20%;
+    --muted: 200 20% 94%;
+    --muted-foreground: 200 20% 50%;
+    --accent: 350 80% 80%;
+    --accent-foreground: 350 50% 20%;
+    --border: 200 20% 90%;
+  }
+
+  /* レトロスタイル */
+  /*.retro {*/
+  .retro {
+    --background: 40 30% 95%;
+    --foreground: 340 50% 20%;
+    --card: 40 30% 98%;
+    --card-foreground: 340 50% 20%;
+    --primary: 340 80% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 160 80% 70%;
+    --secondary-foreground: 160 50% 20%;
+    --muted: 40 30% 90%;
+    --muted-foreground: 340 30% 40%;
+    --accent: 270 80% 65%;
+    --accent-foreground: 0 0% 100%;
+    --border: 40 30% 85%;
+  }
+
+  /* ウェーブスタイル */
+  /*.wave {*/
+  .wave {
+    --background: 220 50% 98%;
+    --foreground: 220 80% 20%;
+    --card: 220 50% 100%;
+    --card-foreground: 220 80% 20%;
+    --primary: 220 80% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 190 80% 80%;
+    --secondary-foreground: 190 80% 20%;
+    --muted: 220 50% 94%;
+    --muted-foreground: 220 50% 40%;
+    --accent: 250 80% 70%;
+    --accent-foreground: 250 80% 20%;
+    --border: 220 50% 90%;
+  }
+
+  /* シャドウスタイル */
+  /*.shadow {*/
+  .shadow {
+    --background: 240 10% 95%;
+    --foreground: 240 50% 10%;
+    --card: 240 10% 100%;
+    --card-foreground: 240 50% 10%;
+    --primary: 240 50% 40%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 240 10% 90%;
+    --secondary-foreground: 240 50% 20%;
+    --muted: 240 10% 85%;
+    --muted-foreground: 240 30% 40%;
+    --accent: 240 30% 60%;
+    --accent-foreground: 0 0% 100%;
+    --border: 240 10% 80%;
+  }
+
+  /* グラデーションスタイル */
+  /*.gradient {*/
+  .gradient {
+    --background: 260 50% 98%;
+    --foreground: 260 50% 10%;
+    --card: 260 50% 100%;
+    --card-foreground: 260 50% 10%;
+    --primary: 260 80% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 320 80% 60%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 260 50% 94%;
+    --muted-foreground: 260 30% 40%;
+    --accent: 190 80% 60%;
+    --accent-foreground: 0 0% 100%;
+    --border: 260 50% 90%;
+  }
+
+  /* モノトーンスタイル */
+  /*.monotone {*/
+  .monotone {
+    --background: 220 10% 98%;
+    --foreground: 220 50% 10%;
+    --card: 220 10% 100%;
+    --card-foreground: 220 50% 10%;
+    --primary: 220 80% 40%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 10% 95%;
+    --secondary-foreground: 220 50% 10%;
+    --muted: 220 10% 90%;
+    --muted-foreground: 220 30% 40%;
+    --accent: 220 50% 50%;
+    --accent-foreground: 0 0% 100%;
+    --border: 220 10% 85%;
+  }
+
+  /* ペーパースタイル */
+  /*.paper {*/
+  .paper {
+    --background: 40 20% 97%;
+    --foreground: 40 40% 15%;
+    --card: 40 20% 99%;
+    --card-foreground: 40 40% 15%;
+    --primary: 40 60% 45%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 40 20% 92%;
+    --secondary-foreground: 40 40% 15%;
+    --muted: 40 20% 90%;
+    --muted-foreground: 40 30% 40%;
+    --accent: 20 60% 60%;
+    --accent-foreground: 0 0% 100%;
+    --border: 40 20% 85%;
+  }
+
+  /* ブルータリストスタイル */
+  /*.brutalist {*/
+  .brutalist {
+    --background: 0 0% 95%;
+    --foreground: 0 0% 5%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 5%;
+    --primary: 0 0% 0%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 90%;
+    --secondary-foreground: 0 0% 5%;
+    --muted: 0 0% 85%;
+    --muted-foreground: 0 0% 40%;
+    --accent: 0 0% 20%;
+    --accent-foreground: 0 0% 100%;
+    --border: 0 0% 0%;
+  }
+
+  /* スペーススタイル */
+  /*.space {*/
+  .space {
+    --background: 240 30% 5%;
+    --foreground: 240 20% 98%;
+    --card: 240 30% 8%;
+    --card-foreground: 240 20% 98%;
+    --primary: 270 100% 70%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 200 100% 60%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 240 30% 12%;
+    --muted-foreground: 240 20% 70%;
+    --accent: 330 100% 65%;
+    --accent-foreground: 0 0% 100%;
+    --border: 240 30% 15%;
+  }
+
+  /* ドットスタイル */
+  /*.dot {*/
+  .dot {
+    --background: 0 0% 98%;
+    --foreground: 0 0% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+    --primary: 200 80% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 95%;
+    --secondary-foreground: 0 0% 10%;
+    --muted: 0 0% 90%;
+    --muted-foreground: 0 0% 40%;
+    --accent: 340 80% 60%;
+    --accent-foreground: 0 0% 100%;
+    --border: 0 0% 85%;
+  }
+
+  /* 禅スタイル */
+  /*.zen {*/
+  .zen {
+    --background: 0 0% 98%;
+    --foreground: 0 0% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+    --primary: 30 10% 30%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 30 10% 95%;
+    --secondary-foreground: 30 10% 30%;
+    --muted: 30 10% 90%;
+    --muted-foreground: 30 10% 40%;
+    --accent: 30 20% 50%;
+    --accent-foreground: 0 0% 100%;
+    --border: 30 10% 80%;
+  }
+
+  /* ノルディックスタイル */
+  /*.nordic {*/
+  .nordic {
+    --background: 210 20% 98%;
+    --foreground: 210 50% 10%;
+    --card: 210 20% 100%;
+    --card-foreground: 210 50% 10%;
+    --primary: 210 50% 40%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 20% 92%;
+    --secondary-foreground: 210 50% 20%;
+    --muted: 210 20% 88%;
+    --muted-foreground: 210 30% 40%;
+    --accent: 350 40% 50%;
+    --accent-foreground: 0 0% 100%;
+    --border: 210 20% 85%;
+  }
+
+  /* バウハウススタイル */
+  /*.bauhaus {*/
+  .bauhaus {
+    --background: 0 0% 98%;
+    --foreground: 0 0% 0%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+    --primary: 0 80% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 80% 50%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 60 80% 90%;
+    --muted-foreground: 0 0% 40%;
+    --accent: 60 80% 50%;
+    --accent-foreground: 0 0% 0%;
+    --border: 0 0% 85%;
+  }
+
+  /* サイバーパンクスタイル */
+  /*.cyberpunk {*/
+  .cyberpunk {
+    --background: 280 50% 5%;
+    --foreground: 280 100% 95%;
+    --card: 280 50% 8%;
+    --card-foreground: 280 100% 95%;
+    --primary: 320 100% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 180 100% 50%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 280 50% 12%;
+    --muted-foreground: 280 50% 70%;
+    --accent: 60 100% 50%;
+    --accent-foreground: 0 0% 0%;
+    --border: 280 50% 20%;
+  }
+
+  /* ヴィンテージスタイル */
+  /*.vintage {*/
+  .vintage {
+    --background: 40 30% 96%;
+    --foreground: 20 50% 20%;
+    --card: 40 30% 98%;
+    --card-foreground: 20 50% 20%;
+    --primary: 20 80% 40%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 40 30% 90%;
+    --secondary-foreground: 20 50% 20%;
+    --muted: 40 30% 85%;
+    --muted-foreground: 20 30% 40%;
+    --accent: 20 50% 60%;
+    --accent-foreground: 0 0% 100%;
+    --border: 40 30% 80%;
+  }
+
+  /* エコスタイル */
+  /*.eco {*/
+  .eco {
+    --background: 90 30% 98%;
+    --foreground: 120 30% 20%;
+    --card: 90 30% 100%;
+    --card-foreground: 120 30% 20%;
+    --primary: 120 50% 40%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 90 30% 92%;
+    --secondary-foreground: 120 30% 20%;
+    --muted: 90 30% 88%;
+    --muted-foreground: 120 20% 40%;
+    --accent: 60 50% 50%;
+    --accent-foreground: 0 0% 100%;
+    --border: 90 30% 85%;
+  }
+
+  /* フューチャリスティックスタイル */
+  /*.futuristic {*/
+  .futuristic {
+    --background: 200 50% 98%;
+    --foreground: 200 80% 10%;
+    --card: 200 50% 100%;
+    --card-foreground: 200 80% 10%;
+    --primary: 200 80% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 250 80% 60%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 200 50% 94%;
+    --muted-foreground: 200 50% 40%;
+    --accent: 300 80% 50%;
+    --accent-foreground: 0 0% 100%;
+    --border: 200 50% 90%;
+  }
+
+  /* 折り紙スタイル */
+  /*.origami {*/
+  .origami {
+    --background: 30 30% 98%;
+    --foreground: 30 50% 20%;
+    --card: 30 30% 100%;
+    --card-foreground: 30 50% 20%;
+    --primary: 30 80% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 30 30% 92%;
+    --secondary-foreground: 30 50% 20%;
+    --muted: 30 30% 88%;
+    --muted-foreground: 30 30% 40%;
+    --accent: 0 80% 50%;
+    --accent-foreground: 0 0% 100%;
+    --border: 30 30% 85%;
+  }
+
+  /* 水彩スタイル */
+  /*.watercolor {*/
+  .watercolor {
+    --background: 180 30% 98%;
+    --foreground: 180 50% 20%;
+    --card: 180 30% 100%;
+    --card-foreground: 180 50% 20%;
+    --primary: 180 60% 40%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 180 30% 92%;
+    --secondary-foreground: 180 50% 20%;
+    --muted: 180 30% 88%;
+    --muted-foreground: 180 30% 40%;
+    --accent: 210 60% 50%;
+    --accent-foreground: 0 0% 100%;
+    --border: 180 30% 85%;
+  }
+
+  /* ピクセルスタイル */
+  /*.pixel {*/
+  .pixel {
+    --background: 270 20% 95%;
+    --foreground: 270 50% 20%;
+    --card: 270 20% 98%;
+    --card-foreground: 270 50% 20%;
+    --primary: 270 80% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 270 20% 90%;
+    --secondary-foreground: 270 50% 20%;
+    --muted: 270 20% 85%;
+    --muted-foreground: 270 30% 40%;
+    --accent: 300 80% 50%;
+    --accent-foreground: 0 0% 100%;
+    --border: 270 20% 80%;
+  }
+
+  /* ポップアートスタイル */
+  /*.popart {*/
+  .popart {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+    --primary: 60 100% 50%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 330 100% 60%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 95%;
+    --muted-foreground: 0 0% 40%;
+    --accent: 210 100% 50%;
+    --accent-foreground: 0 0% 100%;
+    --border: 0 0% 0%;
+  }
+
+  /* グランジスタイル */
+  /*.grunge {*/
+  .grunge {
+    --background: 20 10% 98%;
+    --foreground: 20 10% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 20 10% 10%;
+    --primary: 20 10% 30%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 20 10% 80%;
+    --secondary-foreground: 20 10% 10%;
+    --muted: 20 10% 90%;
+    --muted-foreground: 20 10% 40%;
+    --accent: 20 80% 40%;
+    --accent-foreground: 0 0% 100%;
+    --border: 20 10% 80%;
+  }
+
+  /* アールヌーボースタイル */
+  /*.artnouveau {*/
+  .artnouveau {
+    --background: 140 30% 98%;
+    --foreground: 140 50% 20%;
+    --card: 140 30% 100%;
+    --card-foreground: 140 50% 20%;
+    --primary: 140 60% 40%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 140 30% 92%;
+    --secondary-foreground: 140 50% 20%;
+    --muted: 140 30% 88%;
+    --muted-foreground: 140 30% 40%;
+    --accent: 80 60% 50%;
+    --accent-foreground: 0 0% 100%;
+    --border: 140 30% 85%;
+  }
+
+  /* メンフィススタイル */
+  /*.memphis {*/
+  .memphis {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+    --primary: 330 100% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 60 100% 50%;
+    --secondary-foreground: 0 0% 0%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 0 0% 40%;
+    --accent: 210 100% 50%;
+    --accent-foreground: 0 0% 100%;
+    --border: 0 0% 85%;
+  }
+
+  /* ゴシックスタイル */
+  /*.gothic {*/
+  .gothic {
+    --background: 220 30% 10%;
+    --foreground: 220 30% 98%;
+    --card: 220 30% 12%;
+    --card-foreground: 220 30% 98%;
+    --primary: 0 80% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 30% 20%;
+    --secondary-foreground: 220 30% 98%;
+    --muted: 220 30% 15%;
+    --muted-foreground: 220 30% 70%;
+    --accent: 270 80% 50%;
+    --accent-foreground: 0 0% 100%;
+    --border: 220 30% 20%;
+  }
+
+  /* トロピカルスタイル */
+  /*.tropical {*/
+  .tropical {
+    --background: 140 50% 98%;
+    --foreground: 140 80% 20%;
+    --card: 140 50% 100%;
+    --card-foreground: 140 80% 20%;
+    --primary: 140 80% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 40 100% 60%;
+    --secondary-foreground: 0 0% 0%;
+    --muted: 140 50% 94%;
+    --muted-foreground: 140 50% 40%;
+    --accent: 330 100% 60%;
+    --accent-foreground: 0 0% 100%;
+    --border: 140 50% 90%;
+  }
+
+  /* インダストリアルスタイル */
+  /*.industrial {*/
+  .industrial {
+    --background: 0 0% 95%;
+    --foreground: 0 0% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+    --primary: 0 0% 20%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 30 20% 40%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 90%;
+    --muted-foreground: 0 0% 40%;
+    --accent: 0 80% 50%;
+    --accent-foreground: 0 0% 100%;
+    --border: 0 0% 80%;
+  }
+
+  /* ロココスタイル */
+  /*.rococo {*/
+  .rococo {
+    --background: 350 30% 98%;
+    --foreground: 350 50% 20%;
+    --card: 350 30% 100%;
+    --card-foreground: 350 50% 20%;
+    --primary: 350 80% 80%;
+    --primary-foreground: 350 80% 20%;
+    --secondary: 350 30% 92%;
+    --secondary-foreground: 350 50% 20%;
+    --muted: 350 30% 88%;
+    --muted-foreground: 350 30% 40%;
+    --accent: 30 80% 80%;
+    --accent-foreground: 30 80% 20%;
+    --border: 350 30% 85%;
+  }
+
+  /* アールデコスタイル */
+  /*.artdeco {*/
+  .artdeco {
+    --background: 40 30% 98%;
+    --foreground: 40 50% 20%;
+    --card: 40 30% 100%;
+    --card-foreground: 40 50% 20%;
+    --primary: 40 80% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 80% 50%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 40 30% 88%;
+    --muted-foreground: 40 30% 40%;
+    --accent: 0 80% 50%;
+    --accent-foreground: 0 0% 100%;
+    --border: 40 30% 85%;
+  }
+
+  /* ミッドセンチュリースタイル */
+  /*.midcentury {*/
+  .midcentury {
+    --background: 30 30% 98%;
+    --foreground: 30 50% 20%;
+    --card: 30 30% 100%;
+    --card-foreground: 30 50% 20%;
+    --primary: 30 80% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 200 80% 60%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 30 30% 88%;
+    --muted-foreground: 30 30% 40%;
+    --accent: 160 80% 40%;
+    --accent-foreground: 0 0% 100%;
+    --border: 30 30% 85%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.grid-pattern {
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.circle-pattern {
+  position: relative;
+  overflow: hidden;
+}
+
+.circle-pattern::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+  background-size: 20px 20px;
+  z-index: -1;
+}
+
+.wave-pattern {
+  position: relative;
+  overflow: hidden;
+}
+
+.wave-pattern::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    rgba(0, 0, 0, 0.05) 10px,
+    rgba(0, 0, 0, 0.05) 20px
+  );
+  z-index: 1;
+}
+
+.dots-pattern {
+  background-image: radial-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, var(--primary-rgb) 0%, var(--accent-rgb) 100%);
+}
+
+.retro-pattern {
+  background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.05) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(0, 0, 0, 0.05) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(0, 0, 0, 0.05) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(0, 0, 0, 0.05) 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+}
+
+.neon-glow {
+  text-shadow: 0 0 5px rgba(var(--primary-rgb), 0.7), 0 0 10px rgba(var(--primary-rgb), 0.5), 0 0 15px
+    rgba(var(--primary-rgb), 0.3);
+}
+
+.neon-border {
+  box-shadow: 0 0 5px rgba(var(--primary-rgb), 0.7), 0 0 10px rgba(var(--primary-rgb), 0.5);
+}
+
+.shadow-depth {
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08), 0 2px 2px rgba(0, 0, 0, 0.08), 0 4px 4px rgba(0, 0, 0, 0.08), 0 8px 8px
+    rgba(0, 0, 0, 0.08);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--primary-rgb) 0%, var(--accent-rgb) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.paper-texture {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.02'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.paper-fold {
+  position: relative;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.paper-fold::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-width: 0 16px 16px 0;
+  border-style: solid;
+  border-color: #f0f0f0 var(--background);
+}
+
+.stars-bg {
+  background-color: var(--background);
+  background-image: radial-gradient(white, rgba(255, 255, 255, 0.2) 2px, transparent 2px);
+  background-size: 50px 50px;
+}
+
+/* スクロールバーを非表示にするためのユーティリティクラス */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+/* カルーセルのスタイル */
+.carousel-item {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.carousel-item:hover {
+  transform: translateY(-5px);
+}
+
+/* メインコンテンツのパディングを調整 */
+main {
+  padding-top: 180px !important; /* カルーセルの高さを考慮 */
+}
+
+@media (max-width: 768px) {
+  main {
+    padding-top: 220px !important; /* モバイルでのカルーセルの高さを考慮 */
+  }
+}
+
+/* 新しいスタイルのパターン */
+.zen-pattern {
+  background-color: var(--background);
+  background-image: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+.pixel-pattern {
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+  background-size: 10px 10px;
+}
+
+.bauhaus-pattern {
+  background-color: var(--background);
+  background-image: linear-gradient(45deg, var(--primary) 25%, transparent 25%),
+    linear-gradient(-45deg, var(--primary) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, var(--primary) 75%),
+    linear-gradient(-45deg, transparent 75%, var(--primary) 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+  opacity: 0.05;
+}
+
+.origami-fold {
+  position: relative;
+}
+
+.origami-fold::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-width: 0 30px 30px 0;
+  border-style: solid;
+  border-color: var(--secondary) var(--background);
+  transition: all 0.3s ease;
+}
+
+.watercolor-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.watercolor-effect::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 30%, var(--primary-rgb / 10), transparent 70%),
+    radial-gradient(circle at 70% 70%, var(--accent-rgb / 10), transparent 70%);
+  z-index: -1;
+}
+
+/* CSSファイルの最後に、モーダルリセット用のスタイルを追加します */
+
+/* モーダルのリセットスタイル */
+.modal-reset {
+  position: fixed;
+  z-index: 50;
+}
+
+/* ダイアログのオーバーレイスタイルを強化 */
+[data-radix-popper-content-wrapper] {
+  z-index: 50 !important;
+  position: fixed !important;
+}
