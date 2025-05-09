@@ -8,6 +8,7 @@ import { Menu, X, ChevronRight, Github } from "lucide-react"
 import StyleModal from "./style-modal"
 import { Button } from "@/components/ui/button"
 
+// routes配列にアニメスタイルを追加します
 const routes = [
   { path: "/", label: "モノクローム" },
   { path: "/pastel", label: "パステル" },
@@ -28,7 +29,7 @@ const routes = [
   { path: "/brutalist", label: "ブルータリスト" },
   { path: "/space", label: "スペース" },
   { path: "/dot", label: "ドット" },
-  // 新しいスタイルを追加
+  // 既存の追加スタイル
   { path: "/zen", label: "禅" },
   { path: "/nordic", label: "ノルディック" },
   { path: "/bauhaus", label: "バウハウス" },
@@ -39,6 +40,18 @@ const routes = [
   { path: "/origami", label: "折り紙" },
   { path: "/watercolor", label: "水彩" },
   { path: "/pixel", label: "ピクセル" },
+  { path: "/popart", label: "ポップアート" },
+  { path: "/grunge", label: "グランジ" },
+  { path: "/artnouveau", label: "アールヌーボー" },
+  { path: "/memphis", label: "メンフィス" },
+  { path: "/gothic", label: "ゴシック" },
+  { path: "/tropical", label: "トロピカル" },
+  { path: "/industrial", label: "インダストリアル" },
+  { path: "/rococo", label: "ロココ" },
+  { path: "/artdeco", label: "アールデコ" },
+  { path: "/midcentury", label: "ミッドセンチュリー" },
+  // 新しく追加するスタイル
+  { path: "/anime", label: "アニメ" },
 ]
 
 export default function Navigation() {

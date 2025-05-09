@@ -57,6 +57,8 @@ const styles = [
   { path: "/rococo", label: "ロココ", color: "bg-rose-200", imageName: "rococo" },
   { path: "/artdeco", label: "アールデコ", color: "bg-amber-500", imageName: "artdeco" },
   { path: "/midcentury", label: "ミッドセンチュリー", color: "bg-orange-400", imageName: "midcentury" },
+  // 新しく追加するスタイル
+  { path: "/anime", label: "アニメ", color: "bg-pink-400", imageName: "anime" },
 ]
 
 interface StyleModalProps {
